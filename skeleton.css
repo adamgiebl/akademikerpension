@@ -1,5 +1,5 @@
 :root {
-  --gray: #d3dce3;
+  --ghostGray: #d3dce3;
 }
 
 .skeleton-card {
@@ -18,7 +18,7 @@
   width: 320px;
   height: 200px;
   border-radius: 20px 0 0 20px;
-  background: var(--gray);
+  background: var(--ghostGray);
 }
 
 .skeleton-card .details {
@@ -27,22 +27,22 @@
 }
 
 .skeleton-card .paragraph {
-  width: 80%;
+  width: 90%;
   height: 70px;
-  background: var(--gray);
+  background: var(--ghostGray);
 }
 
 .skeleton-card .heading {
   width: 70%;
   height: 25px;
-  background: var(--gray);
+  background: var(--ghostGray);
   margin-bottom: 15px;
 }
 
 .skeleton-card .button {
   background: var(--purple);
   color: white;
-  height: 35px;
+  height: 41px;
   border: none;
   outline: none;
   width: 120px;
@@ -52,7 +52,7 @@
 
 .skeleton-card::before {
   height: 100%;
-  width: 100px;
+  width: 120px;
   position: absolute;
   content: "";
   top: 0;
@@ -64,7 +64,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgb(102, 102, 102) 50%,
+    rgb(80, 80, 80) 50%,
     rgba(255, 255, 255, 0) 100%
   );
 }
