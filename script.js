@@ -1,4 +1,5 @@
-const detailPage = "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed";
+const detailPage =
+  "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed&per_page=20";
 
 window.addEventListener("DOMContentLoaded", subData);
 
@@ -35,9 +36,9 @@ function showSubpage(singleRowData) {
   shortDescription.innerHTML = singleRowData.excerpt.rendered;
   const button = clone.querySelector(".card button");
   const img_url =
-    singleRowData._embedded["wp:featuredmedia"][0].media_details.sizes.medium
+    singleRowData._embedded["wp:featuredmedia"][0].media_details?.sizes?.medium
       .source_url;
-  clone.querySelector(".card img").src = img_url;
+  clone.querySelector(".card img").src = img_url || " ";
 
   // clone
   document.querySelector("main").appendChild(clone);
