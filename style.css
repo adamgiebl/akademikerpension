@@ -24,7 +24,8 @@ body {
   padding: 0 20px;
 }
 .about {
-  padding: 20px 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
   text-align: right;
 }
 
@@ -33,7 +34,7 @@ body {
   color: #757575;
 }
 header {
-  padding: 20px 0;
+  padding: 15px 0;
   background: white;
 }
 header .wrapper {
