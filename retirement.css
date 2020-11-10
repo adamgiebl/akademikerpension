@@ -40,7 +40,7 @@ main {
 }
 
 .card img {
-    width: 200px;
+    width: 220px;
     object-fit: cover;
     border-radius: 20px;
 }
