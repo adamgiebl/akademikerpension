@@ -12,13 +12,18 @@
     <template>
       <div class="card">
         <img
+          class="thumbnail"
           src="https://images.unsplash.com/photo-1604882355734-95a1db66e744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
           alt=""
         />
         <div class="details">
           <h2></h2>
           <p></p>
-          <button>Read more</button>
+
+          <button>
+            Read more
+            <img class="arrow" src="./img/arrow.svg" alt="" />
+          </button>
         </div>
       </div>
     </template>
@@ -46,7 +51,7 @@
         </nav>
       </div>
     </header>
-    <section>
+    <section class="wrapper">
       <div class="hero">
         <div class="text">
           <h1>Life changes can have a major impact on your future pension.</h1>
@@ -74,7 +79,7 @@
         </p>
       </div>
     </section>
-    <main></main>
+    <main class="wrapper"></main>
     <script src="./script.js"></script>
     <script src="subpages.js"></script>
   </body>
