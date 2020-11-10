@@ -1,0 +1,26 @@
+<svg id="Component_12_1" data-name="Component 12 – 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="193.164" height="52.675" viewBox="0 0 193.164 52.675">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Clip_2" data-name="Clip 2" d="M0,0H52.7V52.675H0Z" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path id="Clip_5" data-name="Clip 5" d="M0,0H51.128V51.621H0Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_3" data-name="Group 3" transform="translate(51.108)">
+    <path id="Clip_2-2" data-name="Clip 2" d="M0,0H52.7V52.675H0Z" transform="translate(0)" fill="none"/>
+    <g id="Group_3-2" data-name="Group 3" transform="translate(0)" clip-path="url(#clip-path)">
+      <path id="Fill_1" data-name="Fill 1" d="M52.7,52.676H0V0H52.7V52.675ZM26.348.528a25.81,25.81,0,1,0,25.82,25.81A25.844,25.844,0,0,0,26.348.528Z" transform="translate(0 0)" fill="#f39945"/>
+    </g>
+  </g>
+  <g id="Group_6" data-name="Group 6" transform="translate(0 0.527)">
+    <path id="Clip_5-2" data-name="Clip 5" d="M0,0H54.674V51.621H0Z" fill="none"/>
+    <g id="Group_6-2" data-name="Group 6" clip-path="url(#clip-path-2)">
+      <path id="Fill_4" data-name="Fill 4" d="M25.565,0A25.812,25.812,0,1,0,51.129,25.81,25.688,25.688,0,0,0,25.565,0" transform="translate(-0.001)" fill="#f39945"/>
+    </g>
+  </g>
+  <g id="Group_56" data-name="Group 56" transform="translate(-209.836 -18.421)">
+    <text id="Akademiker" transform="translate(327 27.733)" fill="#020303" font-size="13.17" font-family="Aleo-Regular, Aleo" letter-spacing="0.002em"><tspan x="0" y="11">Akademi</tspan><tspan y="11" letter-spacing="-0.028em">k</tspan><tspan y="11">er</tspan></text>
+    <text id="Pension" transform="translate(327 44.733)" fill="#020303" font-size="13.17" font-family="Aleo-Regular, Aleo" letter-spacing="-0.013em"><tspan x="0" y="11">P</tspan><tspan y="11" letter-spacing="0.002em">ension</tspan></text>
+  </g>
+</svg>
