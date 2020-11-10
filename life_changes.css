@@ -13,23 +13,37 @@
 }
 
 .details h2 {
+  font-size: 18px;
   margin: 0;
+  color: var(--blue);
 }
-
+.details p {
+  font-size: 12px;
+  color: gray;
+  font-weight: 300;
+}
 .card button {
+  display: flex;
   background: var(--purple);
   color: white;
   font-size: 12px;
-  padding: 10px;
+  padding: 14px 20px;
   border: none;
   outline: none;
   width: 120px;
-  border-radius: 2px;
+  border-radius: 5px;
   cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card img {
-  width: 220px;
+.card .thumbnail {
+  width: 190px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
+}
+
+button .arrow {
+  width: 7px;
 }
