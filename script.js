@@ -1,6 +1,6 @@
 const detailPage = "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed";
 
-window.addEventListener("DOMContentLoaded", subData);
+//window.addEventListener("DOMContentLoaded", subData);
 
 function subData() {
   fetch(detailPage)
