@@ -29,6 +29,8 @@ function showSubpage(singleRowData) {
     const shortDescription = clone.querySelector(".card p");
     shortDescription.innerHTML = singleRowData.excerpt.rendered;
     const button = clone.querySelector(".card button");
+    const img_url = singleRowData._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+    clone.querySelector(".card img").src = img_url;
 
     // clone
     document.querySelector("main").appendChild(clone);
