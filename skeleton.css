@@ -1,0 +1,79 @@
+:root {
+  --ghostGray: #d3dce3;
+}
+
+.skeleton-card {
+  width: 100%;
+  background: white;
+  box-shadow: 0px 3px 6px 0px rgba(99, 98, 99, 0.2);
+  border-radius: 20px;
+  display: flex;
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+.skeleton-card .image {
+  width: 320px;
+  height: 200px;
+  border-radius: 20px 0 0 20px;
+  background: var(--ghostGray);
+}
+
+.skeleton-card .details {
+  margin: 15px;
+  width: 100%;
+}
+
+.skeleton-card .paragraph {
+  width: 90%;
+  height: 70px;
+  background: var(--ghostGray);
+}
+
+.skeleton-card .heading {
+  width: 70%;
+  height: 25px;
+  background: var(--ghostGray);
+  margin-bottom: 15px;
+}
+
+.skeleton-card .button {
+  background: var(--purple);
+  color: white;
+  height: 41px;
+  border: none;
+  outline: none;
+  width: 120px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.skeleton-card::before {
+  height: 100%;
+  width: 120px;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 150px;
+  background: transparent;
+  mix-blend-mode: soft-light;
+  animation: load 1.5s infinite ease-in-out;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(80, 80, 80) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes load {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 100%;
+  }
+}

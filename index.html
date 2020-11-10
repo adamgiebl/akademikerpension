@@ -7,6 +7,7 @@
     <title>AkademikerPension - Life changes</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./life_changes.css" />
+    <link rel="stylesheet" href="./skeleton.css" />
   </head>
   <body>
     <template>
@@ -24,6 +25,16 @@
             Read more
             <img class="arrow" src="./img/arrow.svg" alt="" />
           </button>
+        </div>
+      </div>
+    </template>
+    <template id="skeleton-card">
+      <div class="skeleton-card">
+        <div class="image"></div>
+        <div class="details">
+          <div class="heading"></div>
+          <div class="paragraph"></div>
+          <div class="button"></div>
         </div>
       </div>
     </template>
@@ -81,6 +92,6 @@
     </section>
     <main class="wrapper"></main>
     <script src="./script.js"></script>
-    <script src="subpages.js"></script>
+    <script src="./skeleton.js"></script>
   </body>
 </html>

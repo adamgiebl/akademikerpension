@@ -5,10 +5,15 @@ window.addEventListener("DOMContentLoaded", subData);
 function subData() {
   fetch(detailPage)
     .then((res) => res.json())
-    .then(eachSubpage);
+    .then((data) => {
+      setTimeout(() => eachSubpage(data), 2000);
+    });
 }
 
 function eachSubpage(data) {
+  document.querySelectorAll(".skeleton-card").forEach((card) => {
+    card.remove();
+  });
   console.log("data");
   console.log(data);
   data.forEach(showSubpage);
