@@ -10,6 +10,7 @@
   --purple: #413e83;
   --orange: #ff9632;
   --green: #218169;
+  --blue: #386082;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -51,4 +52,41 @@ nav ul {
 }
 .logo {
   height: 40px;
+}
+.hero {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.hero h1 {
+  font-size: 30px;
+  max-width: 500px;
+  color: var(--blue);
+}
+.hero h2 {
+  color: var(--blue);
+  font-weight: 300;
+  font-size: 20px;
+  max-width: 700px;
+}
+
+.cornflower {
+  width: 200px;
+}
+.bulb-card {
+  width: 1200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  margin: auto;
+}
+
+.lightbulb {
+  width: 50px;
+  margin: 30px;
 }
