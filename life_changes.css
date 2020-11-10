@@ -21,10 +21,12 @@ main {
 
 .details {
   display: grid;
+  grid-template-rows: max-content;
   margin: 15px;
 }
 
 .details h2 {
+  margin-bottom: 10px;
   font-size: 18px;
   color: black;
 }
