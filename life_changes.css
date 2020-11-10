@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background: var(--lightgray);
 }
@@ -26,7 +31,7 @@ main {
 .details h2 {
   font-size: 18px;
   margin: 0;
-  color: var(--blue);
+  color: black;
 }
 .details p {
   font-size: 12px;
