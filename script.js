@@ -1,5 +1,5 @@
 const detailPage =
-  "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed&per_page=20";
+  "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed=true&per_page=20";
 
 window.addEventListener("DOMContentLoaded", subData);
 

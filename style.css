@@ -16,6 +16,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   background: var(--lightgray);
+  padding-bottom: 200px;
 }
 
 main {
