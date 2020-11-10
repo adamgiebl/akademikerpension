@@ -1,14 +1,19 @@
 const detailPage = "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed";
 
-//window.addEventListener("DOMContentLoaded", subData);
+window.addEventListener("DOMContentLoaded", subData);
 
 function subData() {
   fetch(detailPage)
     .then((res) => res.json())
-    .then(eachSubpage);
+    .then((data) => {
+      setTimeout(() => eachSubpage(data), 2000);
+    });
 }
 
 function eachSubpage(data) {
+  document.querySelectorAll(".skeleton-card").forEach((card) => {
+    card.remove();
+  });
   console.log("data");
   console.log(data);
   data.forEach(showSubpage);

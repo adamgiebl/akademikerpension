@@ -9,17 +9,17 @@
 }
 
 .details {
+  display: grid;
   margin: 15px;
 }
 
 .details h2 {
   font-size: 18px;
-  margin: 0;
-  color: var(--blue);
+  color: black;
 }
 .details p {
   font-size: 12px;
-  color: gray;
+  color: var(--darkgray);
   font-weight: 300;
 }
 .card button {
@@ -35,6 +35,8 @@
   cursor: pointer;
   align-items: center;
   justify-content: space-between;
+  margin-top: 20px;
+  align-self: end;
 }
 
 .card .thumbnail {
