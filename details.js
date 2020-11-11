@@ -34,7 +34,6 @@ function showSingleDetail(detail) {
   const cardText = document.querySelector("p");
   cardText.innerHTML =  detail.content_card[0].post_content["wp:paragraph"]; //not displaying
 
-
   const button = document.querySelector("button");
   button.textContent = detail.content_card[0].button_label;
 
