@@ -11,6 +11,7 @@ function subData() {
     });
 }
 
+
 function eachSubpage(data) {
   document.querySelectorAll(".skeleton-card").forEach((card) => {
     card.remove();
