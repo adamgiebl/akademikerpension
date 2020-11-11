@@ -3,6 +3,7 @@ const detailPage =
 
 window.addEventListener("DOMContentLoaded", subData);
 
+
 function subData() {
   fetch(detailPage)
     .then((res) => res.json())
