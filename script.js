@@ -3,6 +3,7 @@ const detailPage =
 
 window.addEventListener("DOMContentLoaded", subData);
 
+
 function subData() {
   fetch(detailPage)
     .then((res) => res.json())
@@ -10,6 +11,7 @@ function subData() {
       setTimeout(() => eachSubpage(data), 2000);
     });
 }
+
 
 function eachSubpage(data) {
   document.querySelectorAll(".skeleton-card").forEach((card) => {
