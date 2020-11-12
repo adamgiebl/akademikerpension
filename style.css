@@ -111,6 +111,7 @@ nav ul {
   margin-bottom: 10px;
   display: inline-block;
   overflow: hidden;
+  font-size: 0;
 }
 .category {
   background: transparent;
@@ -119,6 +120,10 @@ nav ul {
   font-size: 16px;
   font-weight: 300;
   border-right: 2px solid var(--lightgray);
+  cursor: pointer;
+}
+.category:focus {
+  outline: 0;
 }
 .category:last-child {
   border-right: none;
