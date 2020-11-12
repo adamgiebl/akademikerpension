@@ -14,18 +14,15 @@ function showDetail() {
   fetch(detailPage)
     .then((res) => res.json())
     .then(showSingleDetail);
-  // console.log("singleDetail");
 }
 
 function showSingleDetail(detail) {
   //LOOP THROUGH
 
   detail.content_card.forEach((card) => {
-    console.log(card);
     const template = document.querySelector("#cardTemplate").content;
     const clone = template.cloneNode(true);
 
-    console.log(clone);
     clone.querySelector(".card-one h3").textContent = card.post_title;
 
     clone.querySelector(".card-one p").innerHTML = card.post_content;
