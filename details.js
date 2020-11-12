@@ -1,5 +1,5 @@
 const detailPage =
-   "https://javasquipt.com/wp-json/wp/v2/detail_page/117";
+   "https://javasquipt.com/wp-json/wp/v2/detail_page/166";
  
 
 window.addEventListener("DOMContentLoaded", showDetail);
@@ -44,11 +44,11 @@ function showSingleDetail(detail) {
   //SHOW TEXT FROM DATA
 
 //   //card-one
-//   const title = document.querySelector("h1");
-//   title.innerHTML = detail.title.rendered;
+  const title = document.querySelector("h1");
+  title.innerHTML = detail.title.rendered;
 
-//   const description = document.querySelector("#paragraph");
-//   description.innerHTML = detail.content.rendered;
+  const description = document.querySelector("#paragraph");
+  description.innerHTML = detail.content.rendered;
 //  console.log(detail)
 
 //   const subtitle = document.querySelector(".card-one h3");
