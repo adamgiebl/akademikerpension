@@ -25,7 +25,7 @@
   color: var(--darkgray);
   font-weight: 300;
 }
-.card button {
+.card .more-btn {
   display: flex;
   background: var(--purple);
   color: white;
@@ -39,6 +39,10 @@
   align-items: center;
   justify-content: space-between;
   align-self: end;
+  text-decoration: none;
+}
+.more-btn .arrow {
+  width: 7px;
 }
 
 .card .thumbnail {
@@ -63,7 +67,4 @@
   z-index: 3;
   left: 0;
   top: 0;
-}
-button .arrow {
-  width: 7px;
 }
