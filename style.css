@@ -127,3 +127,35 @@ nav ul {
   background: var(--green);
   color: white;
 }
+
+.footer-wrapper {
+  background: var(--blue);
+}
+
+footer .wrapper {
+  background: lightblue;
+}
+
+.like-card {
+  display: inline-flex;
+  align-items: center;
+  background: white;
+  box-shadow: 0px 3px 6px 0px rgba(99, 98, 99, 0.15);
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  margin: auto;
+  padding: 15px 25px;
+  margin-top: 20px;
+}
+
+.like-card p {
+  margin-right: 90px;
+}
+.like-icon {
+  margin-right: 10px;
+  width: 50px;
+}
+.dislike-icon {
+  width: 50px;
+}
