@@ -65,11 +65,11 @@ h3 {
   display: flex;
   flex-direction: column;
   width: 90%;
-  height: 150px;
   background: white;
   border-top-right-radius: 25px;
   border-bottom-left-radius: 25px;
   padding: 15px;
+  margin-bottom:50px;
 }
 
 p {
@@ -80,16 +80,16 @@ p {
   background-color: var(--purple);
   color: white;
   padding: 10px;
-  margin-top: 5px;
+  margin-top: 10px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
 } 
 
-.card-one {
+/* .card-one {
   margin-top: -50px;
 }
 
 .card-two {
   margin-top: 50px;
-}
+} */
