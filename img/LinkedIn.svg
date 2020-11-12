@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="41" viewBox="0 0 40 41">
+  <g id="Group_59" data-name="Group 59" transform="translate(-327 -3192)">
+    <g id="Group_57" data-name="Group 57">
+      <path id="Path" d="M3,1.688A1.6,1.6,0,0,0,1.5,0,1.6,1.6,0,0,0,0,1.688V11.813A1.6,1.6,0,0,0,1.5,13.5,1.6,1.6,0,0,0,3,11.813Z" transform="translate(338.5 3208.5)" fill="#fff"/>
+      <path id="Path-2" data-name="Path" d="M4.5,2.25A2.25,2.25,0,1,1,2.25,0,2.25,2.25,0,0,1,4.5,2.25Z" transform="translate(338.5 3202.5)" fill="#fff"/>
+      <path id="Path-3" data-name="Path" d="M1.5,0A1.458,1.458,0,0,1,2.73.722,4.811,4.811,0,0,1,5.25,0C8.49,0,10.5,3.25,10.5,6.026v5.786A1.6,1.6,0,0,1,9,13.5a1.6,1.6,0,0,1-1.5-1.687V6.024A2.575,2.575,0,0,0,5.25,3.373,2.625,2.625,0,0,0,3,5v6.814A1.6,1.6,0,0,1,1.5,13.5,1.6,1.6,0,0,1,0,11.813V1.688A1.6,1.6,0,0,1,1.5,0Z" transform="translate(346 3208.5)" fill="#fff"/>
+    </g>
+    <g id="Rectangle_Copy_4" data-name="Rectangle Copy 4" transform="translate(327 3192)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2">
+      <rect width="40" height="41" rx="10" stroke="none"/>
+      <rect x="1" y="1" width="38" height="39" rx="9" fill="none"/>
+    </g>
+  </g>
+</svg>
