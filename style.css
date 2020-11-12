@@ -109,6 +109,7 @@ nav ul {
   border-radius: 7px;
   margin-bottom: 10px;
   display: inline-block;
+  overflow: hidden;
 }
 .category {
   background: transparent;
@@ -120,4 +121,8 @@ nav ul {
 }
 .category:last-child {
   border-right: none;
+}
+.category.active {
+  background: var(--green);
+  color: white;
 }
