@@ -12,11 +12,15 @@
   <body>
     <template>
       <div class="card">
-        <img
-          class="thumbnail"
-          src="https://images.unsplash.com/photo-1604882355734-95a1db66e744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-          alt=""
-        />
+        <div class="thumbnail-container">
+          <div class="overlay"></div>
+          <img
+            class="thumbnail"
+            src="https://images.unsplash.com/photo-1604882355734-95a1db66e744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
+            alt=""
+          />
+        </div>
+
         <div class="details">
           <h2></h2>
           <p></p>
@@ -95,6 +99,7 @@
     <div class="wrapper">
       <section class="categories">
         <div class="category-switcher">
+          <button class="category active">All</button>
           <template id="categoryTemplate">
             <button class="category"></button>
           </template>
@@ -103,6 +108,20 @@
       </section>
     </div>
     <main class="wrapper"></main>
+    <footer>
+      <div class="wrapper footer-wrapper">
+        <div class="like-card">
+          <p>Hvad synes du?</p>
+          <img class="like-icon" src="./img/like.svg" alt="like icon" />
+          <img
+            class="dislike-icon"
+            src="./img/dislike.svg"
+            alt="dislike icon"
+          />
+        </div>
+      </div>
+    </footer>
+
     <script src="./script.js"></script>
     <script src="./skeleton.js"></script>
   </body>

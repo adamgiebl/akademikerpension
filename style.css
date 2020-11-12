@@ -46,6 +46,7 @@ header {
   padding: 15px 0;
   background: white;
 }
+
 header .wrapper {
   display: flex;
   justify-content: space-between;

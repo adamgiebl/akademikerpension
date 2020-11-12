@@ -17,14 +17,14 @@ function eachSubpage(data) {
   document.querySelectorAll(".skeleton-card").forEach((card) => {
     card.remove();
   });
-  console.log("data");
-  console.log(data);
+  //console.log("data");
+  //console.log(data);
   data.forEach(showSubpage);
 }
 
 function showSubpage(singleRowData) {
-  console.log("singleRowData - console");
-  console.log(singleRowData);
+  //console.log("singleRowData - console");
+  //console.log(singleRowData);
 
   // start template
   const template = document.querySelector("template").content;
@@ -33,7 +33,7 @@ function showSubpage(singleRowData) {
   // the content will go here
   const subtitle = clone.querySelector("h2");
   subtitle.textContent = singleRowData.title.rendered;
-  console.log(singleRowData.title.rendered);
+  //console.log(singleRowData.title.rendered);
   const shortDescription = clone.querySelector(".card p");
   shortDescription.innerHTML = singleRowData.excerpt.rendered;
   const button = clone.querySelector(".card button");
