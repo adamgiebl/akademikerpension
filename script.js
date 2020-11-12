@@ -3,7 +3,6 @@ const detailPage =
 
 window.addEventListener("DOMContentLoaded", subData);
 
-
 function subData() {
   fetch(detailPage)
     .then((res) => res.json())
@@ -11,7 +10,6 @@ function subData() {
       setTimeout(() => eachSubpage(data), 2000);
     });
 }
-
 
 function eachSubpage(data) {
   document.querySelectorAll(".skeleton-card").forEach((card) => {
@@ -23,8 +21,8 @@ function eachSubpage(data) {
 }
 
 function showSubpage(singleRowData) {
-  //console.log("singleRowData - console");
-  //console.log(singleRowData);
+  console.log("singleRowData - console");
+  console.log(singleRowData);
 
   // start template
   const template = document.querySelector("template").content;
@@ -36,7 +34,8 @@ function showSubpage(singleRowData) {
   //console.log(singleRowData.title.rendered);
   const shortDescription = clone.querySelector(".card p");
   shortDescription.innerHTML = singleRowData.excerpt.rendered;
-  const button = clone.querySelector(".card button");
+  clone.querySelector(".card .more-btn").href =
+    "detail.html?id=" + singleRowData.id;
   const img_url =
     singleRowData._embedded["wp:featuredmedia"][0].media_details?.sizes?.medium
       .source_url;
