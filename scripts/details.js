@@ -30,7 +30,7 @@ function showSingleDetail(detail) {
     if (card.button_label == "") {
       clone.querySelector(".btn").style.display = "none";
     } else {
-      clone.querySelector(".btn button").innerHTML = card.button_label;
+      clone.querySelector(".btn button").innerText = card.button_label;
     }
 
     document.querySelector("#container").appendChild(clone);
