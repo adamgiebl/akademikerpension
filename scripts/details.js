@@ -23,17 +23,17 @@ function showSingleDetail(detail) {
     const template = document.querySelector("#cardTemplate").content;
     const clone = template.cloneNode(true);
 
-    clone.querySelector(".card-one h3").textContent = card.post_title;
+    clone.querySelector(".content-card h3").textContent = card.post_title;
 
-    clone.querySelector(".card-one p").innerHTML = card.post_content;
+    clone.querySelector(".content-card p").innerHTML = card.post_content;
 
     if (card.button_label == "") {
-      clone.querySelector(".btn").style.display = "none";
+      clone.querySelector(".content-card button").style.display = "none";
     } else {
-      clone.querySelector(".btn button").innerText = card.button_label;
+      clone.querySelector(".content-card button").innerText = card.button_label;
     }
 
-    document.querySelector("#container").appendChild(clone);
+    document.querySelector("#content-cards-container").appendChild(clone);
   });
 
   //SHOW TEXT FROM DATA

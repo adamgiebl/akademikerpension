@@ -1,9 +1,12 @@
+import { populateSkeleton, removeSkeleton } from "./skeleton.js";
+
 const detailPage =
   "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed=true&per_page=20";
 
 window.addEventListener("DOMContentLoaded", subData);
 
 function subData() {
+  populateSkeleton(10);
   fetch(detailPage)
     .then((res) => res.json())
     .then((data) => {
@@ -12,9 +15,7 @@ function subData() {
 }
 
 function eachCard(data) {
-  document.querySelectorAll(".skeleton-card").forEach((card) => {
-    card.remove();
-  });
+  removeSkeleton();
   data.forEach(showCard);
 }
 

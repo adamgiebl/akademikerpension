@@ -38,37 +38,36 @@
     </header>
 
     <template id="cardTemplate">
-      <div class="card-one">
+      <div class="content-card">
         <h3>Deposit more</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo error
           ducimus aliquam laudantium repellat asperiores harum, nulla velit
           tempora animi?
         </p>
-        <div class="btn">
-          <button>read more</button>
-        </div>
+        <button>read more</button>
       </div>
     </template>
 
     <!-- DETAILS CONTENT -->
-    <section id="content">
-      <div class="background">
+    <section class="top-section">
+      <img class="image" src="./img/leaves.svg" alt="asdsa" />
+      <div class="wrapper top-section-content">
         <ul class="breadcrums">
-          <li>Forside -</li>
-          <li>Livsændringer -</li>
+          <li>Forside -&nbsp;</li>
+          <li>Livsændringer -&nbsp;</li>
           <li>Du kan ikke længere arbejde</li>
         </ul>
-
-        <div class="header">
-          <h1>You become unemployed</h1>
-          <div id="paragraph">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-          </div>
+        <h1>You become unemployed</h1>
+        <div id="paragraph" class="top-content">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
         </div>
       </div>
-      <section id="container"></section>
     </section>
+    <section
+      id="content-cards-container"
+      class="wrapper content-cards"
+    ></section>
 
     <script src="./scripts/details.js"></script>
     <!-- <script src="./skeleton.js"></script> -->
