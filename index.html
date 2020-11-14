@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>AkademikerPension - Life changes</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./life_changes.css" />
-    <link rel="stylesheet" href="./skeleton.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/life_changes.css" />
+    <link rel="stylesheet" href="./styles/skeleton.css" />
   </head>
   <body>
     <template>
@@ -100,7 +100,9 @@
     <div class="wrapper">
       <section class="categories">
         <div class="category-switcher">
-          <button class="category active" data-all="yep">All</button>
+          <button class="category active" data-showall="yep" data-id="0">
+            All
+          </button>
           <template id="categoryTemplate">
             <button class="category"></button>
           </template>
@@ -149,11 +151,17 @@
         <p>
           AkademikerPension <br />
           Smakkedalen 8, 2820 Gentofte <br />
-           CVR-nr.: 20766816
+          CVR-nr.: 20766816
         </p>
       </div>
     </footer>
+    <<<<<<< HEAD
     <script src="./script.js"></script>
     <script src="./skeleton.js"></script>
+    =======
+
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/skeleton.js"></script>
+    >>>>>>> 08a42371be8a0bbb5ebf4415ac34340c7ad87859
   </body>
 </html>
