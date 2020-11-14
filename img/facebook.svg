@@ -1,8 +1,7 @@
-<svg id="Component_16_1" data-name="Component 16 – 1" xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
-  <rect id="Rectangle" width="18" height="26" transform="translate(14 8)" fill="#fff"/>
+<svg id="Component_17_1" data-name="Component 17 – 1" xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
+  <path id="Subtraction_1" data-name="Subtraction 1" d="M26,28H24.976A3.628,3.628,0,0,0,26,27.841V28Zm-8.187,0H14.25V15.75H12.469a1.75,1.75,0,1,1,0-3.5H14.25V9.625A6.187,6.187,0,0,1,20.484,3.5h1.069a1.75,1.75,0,1,1,0,3.5H20.484a2.679,2.679,0,0,0-1.889.769,2.583,2.583,0,0,0-.782,1.856V12.25h3.74a1.75,1.75,0,1,1,0,3.5h-3.74V28Z" transform="translate(2.313 4.5)" fill="#fff"/>
   <g id="Rectangle_Copy_6" data-name="Rectangle Copy 6" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="2">
     <rect width="41" height="41" rx="10" stroke="none"/>
     <rect x="1" y="1" width="39" height="39" rx="9" fill="none"/>
   </g>
-  <path id="Path" d="M3.563,0A3.563,3.563,0,0,0,0,3.563V24.938A3.563,3.563,0,0,0,3.563,28.5H14.25V16.031H12.469a1.781,1.781,0,0,1,0-3.562H14.25V9.8a6.234,6.234,0,0,1,6.234-6.234h1.069a1.781,1.781,0,0,1,0,3.563H20.484A2.672,2.672,0,0,0,17.813,9.8v2.672h3.741a1.781,1.781,0,1,1,0,3.563H17.813V28.5h7.125A3.563,3.563,0,0,0,28.5,24.938V3.563A3.563,3.563,0,0,0,24.938,0Z" transform="translate(6 6)" fill="#386082"/>
 </svg>

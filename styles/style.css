@@ -141,8 +141,11 @@ footer {
 }
 footer .wrapper {
   margin-top: 150px;
-  background: lightblue;
-  height: 600px;
+  padding-bottom: 80px;
+  /*background: lightblue;*/
+  /*height: 600px;*/
+}
+.first-row {
   justify-content: space-between;
   display: flex;
   align-items: flex-start;
@@ -191,7 +194,7 @@ footer .wrapper {
 }
 .phone h4 {
   font-size: 30px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--purple);
 }
 .schedule {
@@ -226,4 +229,21 @@ footer .wrapper {
   padding: 15px 30px;
 }
 .address {
+  margin-top: -150px;
+  color: white;
+}
+.second-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 150px;
+  font-size: 16px;
+  line-height: 2.5;
+  color: white;
+}
+.social-media {
+  margin-top: 30px;
+}
+
+.social-media .icon {
+  margin-right: 10px;
 }
