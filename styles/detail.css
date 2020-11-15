@@ -112,8 +112,18 @@ body {
 #accordion {
   background: var(--green);
   color: white;
-  max-width: 810px;
+  max-width: 800px;
   margin: auto;
   padding: 20px;
   cursor: pointer;
+}
+
+.question {
+  display: flex;
+  flex-direction: row; 
+}
+
+.question p:last-child {
+  margin-left: auto;
+  margin-right: 0;
 }
