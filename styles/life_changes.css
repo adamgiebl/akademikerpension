@@ -11,14 +11,12 @@
   display: grid;
   grid-template-rows: max-content;
   margin: 15px;
-  grid-template-rows: max-content;
 }
 
 .details h2 {
   margin-bottom: 10px;
   font-size: 18px;
   color: black;
-  margin-bottom: 10px;
 }
 .details p {
   font-size: 14px;

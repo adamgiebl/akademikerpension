@@ -35,7 +35,9 @@ button {
   margin: auto;
   padding: 0 20px;
 }
-
+.card-wrapper {
+  min-height: 600px;
+}
 .about {
   padding-top: 12px;
   padding-bottom: 12px;
