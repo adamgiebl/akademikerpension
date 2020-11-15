@@ -1,13 +1,23 @@
 import { populateSkeleton, removeSkeleton } from "./skeleton.js";
 
-const detailPage =
-  "https://javasquipt.com/wp-json/wp/v2/detail_page?_embed=true&per_page=20";
+// limiting fetch to specified properties to avoid fetching unnecessary data
+const propertiesToFetch = [
+  "title",
+  "excerpt",
+  "categories",
+  "order",
+  "_links",
+  "_embedded",
+  "slug",
+];
 
-window.addEventListener("DOMContentLoaded", subData);
+const pagesUrl = `https://javasquipt.com/wp-json/wp/v2/detail_page?per_page=20&_fields=${propertiesToFetch.join(
+  ","
+)}&_embed`;
 
-function subData() {
-  populateSkeleton(10);
-  fetch(detailPage)
+function fetchData() {
+  populateSkeleton(14);
+  fetch(pagesUrl)
     .then((res) => res.json())
     .then((data) => {
       eachCard(data);
@@ -16,11 +26,15 @@ function subData() {
 
 function eachCard(data) {
   removeSkeleton();
+  fetchCategories();
+  //sorting by order
+  data.sort(sortingFunction);
+
   data.forEach(showCard);
 }
 
 function showCard(singleRowData) {
-  // start template
+  // clone template
   const template = document.querySelector("template").content;
   const clone = template.cloneNode(true);
   // the content will go here
@@ -29,38 +43,40 @@ function showCard(singleRowData) {
   const shortDescription = clone.querySelector(".card p");
   shortDescription.innerHTML = singleRowData.excerpt.rendered;
   clone.querySelector(".card .more-btn").href =
-    "detail.html?id=" + singleRowData.id;
+    "detail.html?page=" + singleRowData.slug;
   const img_url =
     singleRowData._embedded["wp:featuredmedia"][0].media_details.sizes.medium
       .source_url;
   clone.querySelector(".card img").src = img_url || " ";
   clone.querySelector(".card").dataset.categoryid = singleRowData.categories[0];
 
-  // clone
+  // appending the clone
   document.querySelector("main").appendChild(clone);
 }
 
-fetch("https://javasquipt.com/wp-json/wp/v2/categories")
-  .then((response) => {
-    return response.json();
-  })
-  .then((arrayOfCategories) => {
-    arrayOfCategories.forEach((singleCategory) => {
-      // if the single category has the id of 1, which is for us "uncategorized",
-      // then the function will return and stop running, going to
-      // the next iteration (job, family, etc)
-      if (singleCategory.id === 1) {
-        return;
-      }
-      const template = document.querySelector("#categoryTemplate").content;
-      const clone = template.cloneNode(true);
+const fetchCategories = () => {
+  fetch("https://javasquipt.com/wp-json/wp/v2/categories")
+    .then((response) => {
+      return response.json();
+    })
+    .then((arrayOfCategories) => {
+      arrayOfCategories.forEach((singleCategory) => {
+        // if the single category has the id of 1, which is for us "uncategorized",
+        // then the function will return and stop running, going to
+        // the next iteration (job, family, etc)
+        if (singleCategory.id === 1) {
+          return;
+        }
+        const template = document.querySelector("#categoryTemplate").content;
+        const clone = template.cloneNode(true);
 
-      clone.querySelector(".category").textContent = singleCategory.name;
-      clone.querySelector(".category").dataset.id = singleCategory.id;
-      document.querySelector(".category-switcher").appendChild(clone);
-      makeCategorySwitcherWork();
+        clone.querySelector(".category").textContent = singleCategory.name;
+        clone.querySelector(".category").dataset.id = singleCategory.id;
+        document.querySelector(".category-switcher").appendChild(clone);
+        makeCategorySwitcherWork();
+      });
     });
-  });
+};
 
 const makeCategorySwitcherWork = () => {
   document.querySelectorAll(".category").forEach((categoryButton) => {
@@ -86,3 +102,18 @@ const makeCategorySwitcherWork = () => {
     });
   });
 };
+
+const sortingFunction = (a, b) => {
+  const item1 = Array.isArray(a.order) ? 0 : parseInt(a.order);
+  const item2 = Array.isArray(b.order) ? 0 : parseInt(b.order);
+  if (item1 < item2) {
+    return 1;
+  }
+  if (item1 > item2) {
+    return -1;
+  }
+  // names must be equal
+  return 0;
+};
+
+window.addEventListener("DOMContentLoaded", fetchData);
