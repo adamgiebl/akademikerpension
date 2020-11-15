@@ -98,3 +98,22 @@ body {
 .content-cards {
   margin-top: -56px;
 }
+
+/* accordion */
+
+.hide {
+  display: none;
+}
+#accordion .answer {
+  display: none;
+  margin-top: 2%;
+}
+
+#accordion {
+  background: var(--green);
+  color: white;
+  max-width: 810px;
+  margin: auto;
+  padding: 20px;
+  cursor: pointer;
+}

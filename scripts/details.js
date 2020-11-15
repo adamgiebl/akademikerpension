@@ -18,7 +18,7 @@ function showDetail() {
 
 function showSingleDetail(detail) {
   //LOOP THROUGH
-
+console.log(detail)
   detail.content_card.forEach((card) => {
     const template = document.querySelector("#cardTemplate").content;
     const clone = template.cloneNode(true);
@@ -38,7 +38,7 @@ function showSingleDetail(detail) {
 
   //SHOW TEXT FROM DATA
 
-  //   //card-one
+  //card-one
   const title = document.querySelector("h1");
   title.innerHTML = detail.title.rendered;
 
@@ -59,3 +59,21 @@ function showSingleDetail(detail) {
   //    document.querySelector(".card-two h3").innerHTML = detail.content_card[1].post_title;
   //    document.querySelector(".card-two p").innerHTML =  detail.content_card[1].post_content;
 }
+
+
+//ACC SHOW-HIDE TEXT
+const question = document.querySelector(".question");
+const answer = document.querySelector(".answer");
+
+question.addEventListener("click", showAnswer);
+
+function showAnswer() {
+  question.classList.toggle(".hide");
+  if (answer.style.display == "none") {
+    answer.style.display = "block"
+  } else {
+    answer.style.display = "none"
+  }
+
+}
+
