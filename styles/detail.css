@@ -104,9 +104,9 @@ body {
 .hide {
   display: none;
 }
-#accordion .answer {
+#accordion .answer p {
   display: none;
-  margin-top: 2%;
+  margin-top: 5px;
 }
 
 #accordion {
@@ -118,9 +118,16 @@ body {
   cursor: pointer;
 }
 
+#accordion .question:hover {
+
+}
+
 .question {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
+  margin-top: 5px;
+  padding: 10px;
+  border-bottom: .5px dashed white; 
 }
 
 .question p:last-child {

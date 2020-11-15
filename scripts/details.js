@@ -6,9 +6,6 @@ const detailPage = "https://javasquipt.com/wp-json/wp/v2/detail_page/" + pageId;
 
 window.addEventListener("DOMContentLoaded", showDetail);
 
-// //SINGLE DETAIL
-// const urlParams = new URLSearchParams(window.location.search);
-// const singleDetail = urlParams.get("detail_page_id");
 
 function showDetail() {
   fetch(detailPage)
@@ -32,48 +29,24 @@ console.log(detail)
     } else {
       clone.querySelector(".content-card button").innerText = card.button_label;
     }
-
+ 
     document.querySelector("#content-cards-container").appendChild(clone);
   });
-
-  //SHOW TEXT FROM DATA
-
-  //card-one
-  const title = document.querySelector("h1");
-  title.innerHTML = detail.title.rendered;
-
-  const description = document.querySelector("#paragraph");
-  description.innerHTML = detail.content.rendered;
-  //  console.log(detail)
-
-  //   const subtitle = document.querySelector(".card-one h3");
-  //   subtitle.innerHTML = detail.content_card[0].post_title;
-
-  //   const cardText = document.querySelector(".card-one p");
-  //   cardText.innerHTML =  detail.content_card[0].post_content; //not displaying
-
-  //   const button = document.querySelector("button");
-  //   button.textContent = detail.content_card[0].button_label;
-
-  //   //card-two
-  //    document.querySelector(".card-two h3").innerHTML = detail.content_card[1].post_title;
-  //    document.querySelector(".card-two p").innerHTML =  detail.content_card[1].post_content;
 }
 
+function showSingleDetail(accQuestions) {
+  //LOOP THROUGH
+  accQuestions.questions.forEach((questionData) => {
+    const template = document.querySelector("#accordion-template").content;
+    const copy = template.cloneNode(true);
 
-//ACC SHOW-HIDE TEXT
-const question = document.querySelector(".question");
-const answer = document.querySelector(".answer");
+    //accordion template
+   copy.querySelector(".question").textContent = questionData.questions;
 
-question.addEventListener("click", showAnswer);
+ document.querySelector("#accordion").appendChild(copy);
 
-function showAnswer() {
-  question.classList.toggle(".hide");
-  if (answer.style.display == "none") {
-    answer.style.display = "block"
-  } else {
-    answer.style.display = "none"
-  }
-
+  });
 }
+
+  
 
