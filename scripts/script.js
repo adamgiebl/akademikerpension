@@ -1,3 +1,4 @@
+// importing functions for skeleton loading
 import { populateSkeleton, removeSkeleton } from "./skeleton.js";
 
 // limiting fetch to specified properties to avoid fetching unnecessary data
@@ -11,31 +12,37 @@ const propertiesToFetch = [
   "slug",
 ];
 
-const pagesUrl = `https://javasquipt.com/wp-json/wp/v2/detail_page?per_page=20&_fields=${propertiesToFetch.join(
-  ","
-)}&_embed`;
+const getPagesUrl = `
+  https://javasquipt.com/wp-json/wp/v2/detail_page?per_page=20&_fields=
+    ${propertiesToFetch.join(",")}&_embed
+`;
 
-function fetchData() {
+const fetchData = () => {
   populateSkeleton(14);
-  fetch(pagesUrl)
+  fetch(getPagesUrl)
     .then((res) => res.json())
     .then((data) => {
-      eachCard(data);
+      dataFetched(data);
     });
-}
+};
 
-function eachCard(data) {
+const dataFetched = (data) => {
+  // removing skeleton loading cards
   removeSkeleton();
+
+  // fetching categories for filtering
   fetchCategories();
-  //sorting by order
+
+  // sorting by order
   data.sort(sortingFunction);
 
-  data.forEach(showCard);
-}
+  // rendering each card
+  data.forEach(renderCard);
+};
 
-function showCard(singleRowData) {
+function renderCard(singleRowData) {
   // clone template
-  const template = document.querySelector("template").content;
+  const template = document.querySelector("#card-template").content;
   const clone = template.cloneNode(true);
   // the content will go here
   const subtitle = clone.querySelector("h2");
@@ -73,12 +80,12 @@ const fetchCategories = () => {
         clone.querySelector(".category").textContent = singleCategory.name;
         clone.querySelector(".category").dataset.id = singleCategory.id;
         document.querySelector(".category-switcher").appendChild(clone);
-        makeCategorySwitcherWork();
+        enableCategorySwitching();
       });
     });
 };
 
-const makeCategorySwitcherWork = () => {
+const enableCategorySwitching = () => {
   document.querySelectorAll(".category").forEach((categoryButton) => {
     categoryButton.addEventListener("click", (event) => {
       const clickedCategory = event.target;

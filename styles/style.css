@@ -13,6 +13,7 @@
   --blue: #386082;
   --darkgray: #434343;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
   background: var(--lightgray);

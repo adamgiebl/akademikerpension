@@ -14,29 +14,28 @@
     <link rel="stylesheet" href="./styles/skeleton.css" />
   </head>
   <body>
-    <template>
+    <template id="card-template">
       <div class="card">
         <div class="thumbnail-container">
-          <div class="overlay"></div>
+          <div class="overlay"><!-- blue overlay over the image --></div>
           <img
             class="thumbnail"
-            src="https://images.unsplash.com/photo-1604882355734-95a1db66e744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-            alt=""
+            src="{source}"
+            alt="{alt text}"
             loading="lazy"
           />
         </div>
-
         <div class="details">
-          <h2></h2>
-          <p></p>
-
-          <a class="more-btn" href="">
+          <h2>{heading}</h2>
+          <p>{description}</p>
+          <a class="more-btn" href="{link to detail page}">
             Read more
-            <img class="arrow" src="./img/arrow.svg" alt="" />
+            <img class="arrow" src="./img/arrow.svg" alt="arrow" />
           </a>
         </div>
       </div>
     </template>
+
     <template id="skeleton-card">
       <div class="skeleton-card">
         <div class="image"></div>

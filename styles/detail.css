@@ -95,8 +95,6 @@ body {
   border: none;
   cursor: pointer;
 }
-.content-card button:hover {
-}
 
 .content-cards {
   margin-top: -56px;
