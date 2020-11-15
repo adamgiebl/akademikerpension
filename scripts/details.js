@@ -6,19 +6,20 @@ const detailPage = "https://javasquipt.com/wp-json/wp/v2/detail_page/" + pageId;
 
 window.addEventListener("DOMContentLoaded", showDetail);
 
-// //SINGLE DETAIL
-// const urlParams = new URLSearchParams(window.location.search);
-// const singleDetail = urlParams.get("detail_page_id");
 
 function showDetail() {
   fetch(detailPage)
     .then((res) => res.json())
-    .then(showSingleDetail);
+    .then(function(detail){
+      showSingleDetail(detail)
+      showAccordion(detail)
+    });
+
 }
 
 function showSingleDetail(detail) {
   //LOOP THROUGH
-
+console.log(detail)
   detail.content_card.forEach((card) => {
     const template = document.querySelector("#cardTemplate").content;
     const clone = template.cloneNode(true);
@@ -32,30 +33,33 @@ function showSingleDetail(detail) {
     } else {
       clone.querySelector(".content-card button").innerText = card.button_label;
     }
-
+ 
     document.querySelector("#content-cards-container").appendChild(clone);
   });
 
-  //SHOW TEXT FROM DATA
-
-  //   //card-one
-  const title = document.querySelector("h1");
-  title.innerHTML = detail.title.rendered;
-
-  const description = document.querySelector("#paragraph");
-  description.innerHTML = detail.content.rendered;
-  //  console.log(detail)
-
-  //   const subtitle = document.querySelector(".card-one h3");
-  //   subtitle.innerHTML = detail.content_card[0].post_title;
-
-  //   const cardText = document.querySelector(".card-one p");
-  //   cardText.innerHTML =  detail.content_card[0].post_content; //not displaying
-
-  //   const button = document.querySelector("button");
-  //   button.textContent = detail.content_card[0].button_label;
-
-  //   //card-two
-  //    document.querySelector(".card-two h3").innerHTML = detail.content_card[1].post_title;
-  //    document.querySelector(".card-two p").innerHTML =  detail.content_card[1].post_content;
 }
+
+function showAccordion(detail) {
+  //LOOP THROUGH
+ detail.questions.forEach((q) => {
+    const template = document.querySelector("#question-template").content;
+    const copy = template.cloneNode(true);
+
+    //accordion template
+   copy.querySelector(".question p").textContent = q.post_title;
+
+   copy.querySelector(".answer p").innerHTML = q.post_content;
+
+   copy.querySelector(".question").addEventListener("click", function(e){
+
+     this.nextElementSibling.classList.toggle("hide");   
+   });
+
+
+ document.querySelector("#accordion").appendChild(copy);
+
+  });
+}
+
+  
+
