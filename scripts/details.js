@@ -10,7 +10,11 @@ window.addEventListener("DOMContentLoaded", showDetail);
 function showDetail() {
   fetch(detailPage)
     .then((res) => res.json())
-    .then(showSingleDetail);
+    .then(function(detail){
+      showSingleDetail(detail)
+      showAccordion(detail)
+    });
+
 }
 
 function showSingleDetail(detail) {
@@ -32,16 +36,26 @@ console.log(detail)
  
     document.querySelector("#content-cards-container").appendChild(clone);
   });
+
 }
 
-function showSingleDetail(accQuestions) {
+function showAccordion(detail) {
   //LOOP THROUGH
-  accQuestions.questions.forEach((questionData) => {
-    const template = document.querySelector("#accordion-template").content;
+ detail.questions.forEach((q) => {
+    const template = document.querySelector("#question-template").content;
     const copy = template.cloneNode(true);
 
     //accordion template
-   copy.querySelector(".question").textContent = questionData.questions;
+   copy.querySelector(".question p").textContent = q.post_title;
+
+   copy.querySelector(".answer p").innerHTML = q.post_content;
+
+   copy.querySelector(".question").addEventListener("click", function(e){
+
+     this.nextElementSibling.classList.toggle("hide");
+       
+   });
+
 
  document.querySelector("#accordion").appendChild(copy);
 
