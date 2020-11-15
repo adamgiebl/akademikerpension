@@ -52,8 +52,7 @@ function showAccordion(detail) {
 
    copy.querySelector(".question").addEventListener("click", function(e){
 
-     this.nextElementSibling.classList.toggle("hide");
-       
+     this.nextElementSibling.classList.toggle("hide");   
    });
 
 
