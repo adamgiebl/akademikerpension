@@ -15,8 +15,8 @@
   </head>
   <body>
     <template id="card-template">
-      <div class="card">
-        <div class="thumbnail-container">
+      <article class="card">
+        <figure class="thumbnail-container">
           <div class="overlay"><!-- blue overlay over the image --></div>
           <img
             class="thumbnail"
@@ -24,7 +24,7 @@
             alt="{alt text}"
             loading="lazy"
           />
-        </div>
+        </figure>
         <div class="details">
           <h2>{heading}</h2>
           <p>{description}</p>
@@ -33,7 +33,7 @@
             <img class="arrow" src="./img/arrow.svg" alt="arrow" />
           </a>
         </div>
-      </div>
+      </article>
     </template>
 
     <template id="skeleton-card">

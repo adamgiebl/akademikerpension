@@ -29,6 +29,7 @@ button {
   cursor: pointer;
   outline: 0;
   border: none;
+  font-family: "Open Sans", sans-serif;
 }
 
 .wrapper {
@@ -125,7 +126,7 @@ nav ul {
   border: none;
   padding: 10px 25px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   border-right: 2px solid var(--lightgray);
   cursor: pointer;
 }
