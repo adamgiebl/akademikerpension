@@ -13,6 +13,7 @@
   --blue: #386082;
   --darkgray: #434343;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
   background: var(--lightgray);
@@ -28,6 +29,7 @@ button {
   cursor: pointer;
   outline: 0;
   border: none;
+  font-family: "Open Sans", sans-serif;
 }
 
 .wrapper {
@@ -35,7 +37,9 @@ button {
   margin: auto;
   padding: 0 20px;
 }
-
+.card-wrapper {
+  min-height: 600px;
+}
 .about {
   padding-top: 12px;
   padding-bottom: 12px;
@@ -122,7 +126,7 @@ nav ul {
   border: none;
   padding: 10px 25px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   border-right: 2px solid var(--lightgray);
   cursor: pointer;
 }

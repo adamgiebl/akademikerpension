@@ -1,61 +1,71 @@
 const urlParams = new URLSearchParams(window.location.search);
-const pageId = urlParams.get("id");
-console.log(pageId);
+const slug = urlParams.get("page");
+console.log(slug);
 
-const detailPage = "https://javasquipt.com/wp-json/wp/v2/detail_page/" + pageId;
+const detailPage =
+  "https://javasquipt.com/wp-json/wp/v2/detail_page/?slug=" + slug;
 
 window.addEventListener("DOMContentLoaded", showDetail);
-
-// //SINGLE DETAIL
-// const urlParams = new URLSearchParams(window.location.search);
-// const singleDetail = urlParams.get("detail_page_id");
 
 function showDetail() {
   fetch(detailPage)
     .then((res) => res.json())
-    .then(showSingleDetail);
+    .then((detail) => {
+      const singleDetailPageFromSearch = detail[0];
+      showSingleDetail(singleDetailPageFromSearch);
+      showAccordion(singleDetailPageFromSearch);
+    });
 }
 
 function showSingleDetail(detail) {
   //LOOP THROUGH
-
-  detail.content_card.forEach((card) => {
-    const template = document.querySelector("#cardTemplate").content;
-    const clone = template.cloneNode(true);
-
-    clone.querySelector(".card-one h3").textContent = card.post_title;
-
-    clone.querySelector(".card-one p").innerHTML = card.post_content;
-
-    if (card.button_label == "") {
-      clone.querySelector(".btn").style.display = "none";
-    } else {
-      clone.querySelector(".btn button").innerText = card.button_label;
-    }
-
-    document.querySelector("#container").appendChild(clone);
-  });
-
-  //SHOW TEXT FROM DATA
-
-  //   //card-one
-  const title = document.querySelector("h1");
+  console.log(detail);
+  const title = document.querySelector(".page-heading");
   title.innerHTML = detail.title.rendered;
 
   const description = document.querySelector("#paragraph");
   description.innerHTML = detail.content.rendered;
-  //  console.log(detail)
+  detail.content_card.forEach((card) => {
+    const template = document.querySelector("#cardTemplate").content;
+    const clone = template.cloneNode(true);
 
-  //   const subtitle = document.querySelector(".card-one h3");
-  //   subtitle.innerHTML = detail.content_card[0].post_title;
+    clone.querySelector(".content-card h3").textContent = card.post_title;
 
-  //   const cardText = document.querySelector(".card-one p");
-  //   cardText.innerHTML =  detail.content_card[0].post_content; //not displaying
+    clone.querySelector(".content-card p").innerHTML = card.post_content;
 
-  //   const button = document.querySelector("button");
-  //   button.textContent = detail.content_card[0].button_label;
+    if (card.button_label == "") {
+      clone.querySelector(".content-card button").style.display = "none";
+    } else {
+      clone.querySelector(".content-card button").innerText = card.button_label;
+    }
 
-  //   //card-two
-  //    document.querySelector(".card-two h3").innerHTML = detail.content_card[1].post_title;
-  //    document.querySelector(".card-two p").innerHTML =  detail.content_card[1].post_content;
+    document.querySelector("#content-cards-container").appendChild(clone);
+  });
 }
+
+function showAccordion(detail) {
+  //LOOP THROUGH
+  detail.questions.forEach((q) => {
+    const template = document.querySelector("#question-template").content;
+    const copy = template.cloneNode(true);
+    //accordion template
+    copy.querySelector(".question p").textContent = q.post_title;
+    copy.querySelector(".answer").innerHTML = q.post_content;
+    document.querySelector(".accordion").appendChild(copy);
+  });
+  makeAccordionWork();
+}
+
+const makeAccordionWork = () => {
+  document.querySelectorAll(".question").forEach((q) => {
+    q.addEventListener("click", function () {
+      const answer = this.nextElementSibling;
+      const answerContentHeight = answer.scrollHeight;
+      if (answer.style.maxHeight) {
+        answer.style.maxHeight = null;
+      } else {
+        answer.style.maxHeight = answerContentHeight + "px";
+      }
+    });
+  });
+};

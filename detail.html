@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
+    <meta name="robots" content="noindex, nofollow" />
     <title>AkademikerPension - Life changes</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/detail.css" />
@@ -39,58 +39,127 @@
     </header>
 
     <template id="cardTemplate">
-      <div class="card-one">
+      <div class="content-card">
         <h3>Deposit more</h3>
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo error
           ducimus aliquam laudantium repellat asperiores harum, nulla velit
           tempora animi?
         </p>
-        <div class="btn">
-          <button>read more</button>
-        </div>
+        <button>read more</button>
       </div>
     </template>
 
-    <!-- DETAILS CONTENT -->
-    <section id="content">
-      <div class="background">
-        <ul class="breadcrums">
-          <li>Forside -</li>
-          <li>Livsændringer -</li>
-          <li>Du kan ikke længere arbejde</li>
-        </ul>
-
-        <div class="header">
-          <h1>You become unemployed</h1>
-          <div id="paragraph">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <template id="question-template">
+      <section id="question-container">
+        <div class="question">
+          <p>What am I entitled to?</p>
+          <img class="arrow" src="./img/arrow-down.svg" alt="" />
+        </div>
+        <div class="answer">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates,
+            culpa.
+          </p>
+        </div>
+      </section>
+    </template>
+    <div class="min-height">
+      <section class="top-section">
+        <img class="image" src="./img/leaves.svg" alt="asdsa" />
+        <div class="wrapper top-section-content">
+          <ul class="breadcrums">
+            <li>Forside -&nbsp;</li>
+            <li>Livsændringer -&nbsp;</li>
+            <li>Du kan ikke længere arbejde</li>
+          </ul>
+          <h1 class="page-heading"></h1>
+          <div id="paragraph" class="top-content">
+            <p></p>
           </div>
         </div>
-      </div>
-      <section id="container"></section>
-    </section>
-    <div class="card">
-      <div class="thumbnail-container">
-        <div class="overlay"></div>
-        <img
-          class="thumbnail"
-          src="https://images.unsplash.com/photo-1604882355734-95a1db66e744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-          alt=""
-          loading="lazy"
-        />
-      </div>
+      </section>
 
-      <div class="details">
-        <h2></h2>
-        <p></p>
-
-        <a class="more-btn" href="">
-          Read more
-          <img class="arrow" src="./img/arrow.svg" alt="" />
-        </a>
-      </div>
+      <section
+        id="content-cards-container"
+        class="wrapper content-cards"
+      ></section>
     </div>
+
+    <!-- DETAILS CONTENT -->
+
+    <section id="accordion" class="wrapper">
+      <div class="accordion"></div>
+    </section>
+    <footer>
+      <div class="wrapper">
+        <div class="first-row">
+          <div class="like-card">
+            <p>Hvad synes du?</p>
+            <img class="like-icon" src="./img/like.svg" alt="like icon" />
+            <img
+              class="dislike-icon"
+              src="./img/dislike.svg"
+              alt="dislike icon"
+            />
+          </div>
+          <div class="schedule-card">
+            <div class="phone">
+              <h3>Ring til os på</h3>
+              <h4>39 15 01 02</h4>
+            </div>
+            <div class="schedule">
+              <div class="schedule-item">
+                <p>Mandag til onsdag</p>
+                <span>9:00 til 16:00</span>
+              </div>
+              <div class="schedule-item">
+                <p>Torsdag</p>
+                <span>9:00 til 18:00</span>
+              </div>
+              <div class="schedule-item">
+                <p>Fredag</p>
+                <span>9:00 til 15:00</span>
+              </div>
+            </div>
+            <div class="buttons">
+              <button>Skriv til os</button>
+              <button>Book et møde</button>
+            </div>
+          </div>
+        </div>
+        <div class="address">
+          <p>
+            AkademikerPension <br />
+            Smakkedalen 8, 2820 Gentofte <br />
+            CVR-nr.: 20766816
+          </p>
+        </div>
+        <div class="second-row">
+          <p class="nav">
+            Regler og paragraffer <br />
+            Forebyggelse af hvidvask <br />
+            Omkostningsmåler
+          </p>
+          <p class="nav">
+            God skik og klagemuligheder <br />
+            Finanstilsynets påbud <br />
+            Finanstilsynets påtaler
+          </p>
+          <p class="nav">
+            Finanstilsynets redegørelser <br />
+            Privatlivspolitik <br />
+            Cookies
+          </p>
+        </div>
+        <div class="social-media">
+          <img class="icon" src="./img/facebook.svg" alt="Facebook logo icon" />
+          <img class="icon" src="./img/twitter.svg" alt="Twitter logo icon" />
+          <img class="icon" src="./img/LinkedIn.svg" alt="LinkedIn logo icon" />
+          <img class="icon" src="./img/vimeo.svg" alt="LinkedIn logo icon" />
+        </div>
+      </div>
+    </footer>
     <script src="./scripts/details.js"></script>
     <!-- <script src="./skeleton.js"></script> -->
   </body>

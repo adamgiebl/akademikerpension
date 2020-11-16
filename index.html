@@ -3,36 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="AkademikerPension er en medlemsejet pensionskasse for magistre, gymnasielærere og psykologer, ejere og medlemmer er de samme. Det betyder, at alt overskud tilhører medlemmerne."
+    />
     <title>AkademikerPension - Life changes</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/life_changes.css" />
     <link rel="stylesheet" href="./styles/skeleton.css" />
   </head>
   <body>
-    <template>
-      <div class="card">
-        <div class="thumbnail-container">
-          <div class="overlay"></div>
+    <template id="card-template">
+      <article class="card">
+        <figure class="thumbnail-container">
+          <div class="overlay"><!-- blue overlay over the image --></div>
           <img
             class="thumbnail"
-            src="https://images.unsplash.com/photo-1604882355734-95a1db66e744?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
-            alt=""
+            src="{source}"
+            alt="{alt text}"
             loading="lazy"
           />
-        </div>
-
+        </figure>
         <div class="details">
-          <h2></h2>
-          <p></p>
-
-          <a class="more-btn" href="">
+          <h2>{heading}</h2>
+          <p>{description}</p>
+          <a class="more-btn" href="{link to detail page}">
             Read more
-            <img class="arrow" src="./img/arrow.svg" alt="" />
+            <img class="arrow" src="./img/arrow.svg" alt="arrow" />
           </a>
         </div>
-      </div>
+      </article>
     </template>
+
     <template id="skeleton-card">
       <div class="skeleton-card">
         <div class="image"></div>
@@ -110,7 +113,7 @@
         <div class="search-bar"></div>
       </section>
     </div>
-    <main class="wrapper"></main>
+    <main class="wrapper cards-wrapper"></main>
     <footer>
       <div class="wrapper">
         <div class="first-row">
@@ -180,7 +183,8 @@
         </div>
       </div>
     </footer>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/skeleton.js"></script>
+
+    <script src="./scripts/script.js" type="module"></script>
+    <script src="./scripts/skeleton.js" type="module"></script>
   </body>
 </html>
