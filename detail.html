@@ -79,7 +79,6 @@
           </div>
         </div>
       </section>
-
       <section
         id="content-cards-container"
         class="wrapper content-cards"
@@ -91,6 +90,31 @@
     <section id="accordion" class="wrapper">
       <div class="accordion"></div>
     </section>
+    <section class="related-cards-container wrapper">
+      <h3>Other life changes</h3>
+    </section>
+    <template id="card-template">
+      <article class="card">
+        <figure class="thumbnail-container">
+          <div class="overlay"><!-- blue overlay over the image --></div>
+          <img
+            class="thumbnail"
+            src="{source}"
+            alt="{alt text}"
+            loading="lazy"
+          />
+        </figure>
+        <div class="details">
+          <h2>{heading}</h2>
+          <p>{description}</p>
+          <a class="more-btn" href="{link to detail page}">
+            Read more
+            <img class="arrow" src="./img/arrow.svg" alt="arrow" />
+          </a>
+        </div>
+      </article>
+    </template>
+
     <footer>
       <div class="wrapper">
         <div class="first-row">

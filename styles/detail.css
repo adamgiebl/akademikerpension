@@ -144,3 +144,14 @@ body {
 #question-container:last-child .question {
   border-bottom: none;
 }
+
+.related-cards-container {
+  display: grid;
+  grid-template-columns: 535px 535px;
+  grid-gap: 30px;
+  margin-top: 50px;
+}
+
+.related-cards-container h3 {
+  grid-column: span 2;
+}

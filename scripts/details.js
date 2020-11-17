@@ -2,20 +2,62 @@ const urlParams = new URLSearchParams(window.location.search);
 const slug = urlParams.get("page");
 console.log(slug);
 
-const detailPage =
+const detailPageURL =
   "https://javasquipt.com/wp-json/wp/v2/detail_page/?slug=" + slug;
 
-window.addEventListener("DOMContentLoaded", showDetail);
+window.addEventListener("DOMContentLoaded", fetchData);
 
-function showDetail() {
-  fetch(detailPage)
+const propertiesToFetch = [
+  "title",
+  "excerpt",
+  "categories",
+  "order",
+  "_links",
+  "_embedded",
+  "slug",
+];
+//created this variable for easier use down below in the function.
+const relatedCardsURL = `
+  https://javasquipt.com/wp-json/wp/v2/detail_page?per_page=2&_fields=
+    ${propertiesToFetch.join(",")}&_embed
+`;
+
+function fetchData() {
+  fetch(detailPageURL)
     .then((res) => res.json())
     .then((detail) => {
       const singleDetailPageFromSearch = detail[0];
       showSingleDetail(singleDetailPageFromSearch);
       showAccordion(singleDetailPageFromSearch);
     });
+  fetch(relatedCardsURL) // sending a request to the URL (the one from the variable above) to get the data.
+    .then((res) => {
+      // will run after the fetch comes back with the data. We are accepting the response in the parameter called "res".
+      return res.json(); // we read the json data out of the response and return it into the next function.
+    })
+    .then((theReceivedCardsData) => {
+      showRelatedCards(theReceivedCardsData);
+    }); // will receive the json data and will work with it (e.g. loop through it and render the data).
 }
+const showRelatedCards = (relatedCards) => {
+  relatedCards.forEach((singleRelatedCard) => {
+    const template = document.querySelector("#card-template").content;
+    const clone = template.cloneNode(true);
+    const title = clone.querySelector("h2");
+    title.textContent = singleRelatedCard.title.rendered;
+    const shortDescription = clone.querySelector(".card p");
+    shortDescription.innerHTML = singleRelatedCard.excerpt.rendered;
+    clone.querySelector(".card .more-btn").href =
+      "detail.html?page=" + singleRelatedCard.slug;
+    const img_url =
+      singleRelatedCard._embedded["wp:featuredmedia"][0].media_details.sizes
+        .medium.source_url;
+    clone.querySelector(".card img").src = img_url;
+    clone.querySelector(".card").dataset.categoryid =
+      singleRelatedCard.categories[0];
+    document.querySelector(".related-cards-container").appendChild(clone);
+  });
+};
 
 function showSingleDetail(detail) {
   //LOOP THROUGH
